@@ -32,9 +32,9 @@ jobs:
       postgres:
         image: postgres
         env:
-          POSTGRES_USER: test
-          POSTGRES_DB: test
-          POSTGRES_PASSWORD: test
+          POSTGRES_USER: vitalii
+          POSTGRES_DB: resource_share
+          POSTGRES_PASSWORD: root
         ports:
           - 5432:5432
         options: >-
