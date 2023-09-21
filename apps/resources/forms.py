@@ -1,10 +1,11 @@
-from importlib.resources import Resource
+from time import sleep
 
 from django import forms
 from apps.resources.models import Tag
 
 try:
     print("BEFORE TESTING")
+    sleep(5)
     tags = Tag.objects.all()[0].id
 
 except Exception as err:
