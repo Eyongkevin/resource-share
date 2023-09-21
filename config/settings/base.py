@@ -104,6 +104,8 @@ LOGIN_URL = 'sign-in'
 LOGIN_REDIRECT_URL = 'user-account'
 LOGOUT_REDIRECT_URL = 'home'
 
+
+
 # LOGGING = {
 #     'version': 1,
 #     'disable_existing_loggers': False,
