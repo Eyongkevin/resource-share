@@ -1,6 +1,9 @@
 from importlib.resources import Resource
 
 from django import forms
+from apps.resources.models import Tag
+
+tags = Tag.objects.all()[0].id
 
 
 class PostResourceForm(forms.Form):
