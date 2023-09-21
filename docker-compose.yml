@@ -1,0 +1,11 @@
+version: '3'
+services:
+  postgres-service:
+    image: postgres:latest
+    container_name: postgres-container
+    ports:
+      - 5434:5432
+    environment:
+      POSTGRES_DB: resource_share
+      POSTGRES_PASSWORD: root
+      POSTGRES_USER: vitalii

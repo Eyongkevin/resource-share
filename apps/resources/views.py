@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.views import View
 from django.views.generic import TemplateView, ListView
 from apps.resources.forms import PostResourceForm
-from apps.resources.models import Resources, Review
+from apps.resources.models import Resources, Review, Tag, Category
 from apps.user.models import User
 
 logger = logging.getLogger("resources.views")
@@ -68,7 +68,12 @@ def resource_post(request):
         form = PostResourceForm(request.POST)
         if form.is_valid():
             data = form.cleaned_data
-            print(data)
+            filtered_field = {key: value for key, value in data.items() if key != 'tags'}
+            resource = Resources.objects.create(**filtered_field)
+            resource.tags.set(Tag.objects.filter(id__in=data.get('tags')))
+            resource.cat_id = Category.objects.get(pk=1)
+            resource.save()
+            # print(data)
             return render(request, 'resources/home-page.html')
         return render(request, 'resources/home-page.html', {
             'form': form
