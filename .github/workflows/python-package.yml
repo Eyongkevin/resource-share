@@ -20,21 +20,14 @@ jobs:
     environment:
       name: res
       url: https://github.com/vitaliisili/resource-share
-#    env:
-#      DB_NAME: ${{ res.DB_NAME }}
-#      DB_USER: ${{ res.DB_USER }}
-#      DB_PASSWORD: ${{ res.DB_PASSWORD }}
-#      DB_HOST: ${{ res.DB_HOST }}
-#      DB_PORT: 5432
-#      DJANGO_SECRET_KEY: ${{ res.DJANGO_SECRET_KEY }}
 
     services:
       postgres:
         image: postgres
         env:
-          POSTGRES_USER: $DB_USER
-          POSTGRES_DB: $DB_NAME
-          POSTGRES_PASSWORD: $DB_PASSWORD
+          POSTGRES_USER: $res.DB_USER
+          POSTGRES_DB: $res.DB_NAME
+          POSTGRES_PASSWORD: $res.DB_PASSWORD
         ports:
           - 5432:5432
         options: >-
