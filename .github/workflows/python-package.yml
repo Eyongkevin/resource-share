@@ -32,9 +32,9 @@ jobs:
       postgres:
         image: postgres
         env:
-          POSTGRES_USER: ${{ res.DB_USER }}
-          POSTGRES_DB: ${{ res.DB_NAME }}
-          POSTGRES_PASSWORD: ${{ res.DB_PASSWORD }}
+          POSTGRES_USER: test
+          POSTGRES_DB: test
+          POSTGRES_PASSWORD: test
         ports:
           - 5432:5432
         options: >-
