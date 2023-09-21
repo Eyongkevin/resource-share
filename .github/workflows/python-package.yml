@@ -19,7 +19,7 @@ jobs:
         python-version: ["3.11"]
     environment:
       name: res
-      url: https://github.com
+      url: https://github.com/vitaliisili/resource-share
 #    env:
 #      DB_NAME: ${{ res.DB_NAME }}
 #      DB_USER: ${{ res.DB_USER }}
