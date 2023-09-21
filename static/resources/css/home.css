@@ -1,0 +1,41 @@
+#res-header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 60px;
+    font-size: 30px;
+}
+
+section {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.res-data {
+    margin: 10px;
+    font-size: 20px;
+    /*font-weight: bold;*/
+}
+
+#cat {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.categories {
+    border: 1px solid #eee4e4;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.categories:hover {
+    background-color: #5271c2;
+    cursor: pointer;
+}
+
+.categories p{
+    /*font-weight: bold;*/
+    font-size: 19px;
+}

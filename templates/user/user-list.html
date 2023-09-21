@@ -1,0 +1,39 @@
+{% extends "core/base.html" %}
+{% load custom_filter %}
+{% load static %}
+
+{% block title %}
+    User List
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static "user/css/user.css" %}">
+{% endblock %}
+
+{% block content %}
+    <section id="user-content">
+        <div class="user-info">
+            <h1>User List</h1>
+            <p>User count: {{ user_list|length }} Users</p>
+        </div>
+
+        <div id="user-list">
+        <table id="user-list-table">
+            <tr class="column column-head">
+                <th class="row row-head">Username</th>
+                <th class="row row-head">First Name</th>
+                <th class="row row-head">Last Name</th>
+            </tr>
+            {% for user in user_list %}
+                <tr class="column {% cycle "row-odd" "row-even" %} {% if not user.is_active %}inactive{% endif %}">
+                    <td class="row">{{ user.username|cap_all_but_upper_first }}</td>
+                    <td class="row">{{ user.first_name|title }}</td>
+                    <td class="row">{{ user.last_name|title }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    </section>
+
+
+{% endblock %}

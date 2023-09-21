@@ -1,0 +1,42 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}
+    Post Resource
+{% endblock %}
+
+
+{% block style %}
+    <link rel="stylesheet" href="{% static "resources/css/form.css" %}">
+{% endblock %}
+
+
+{% block content %}
+    <section id="post-content">
+        <form id="form" action="{% url "resource-post" %}" method="POST">
+            {% csrf_token %}
+            <h1 class="form-title">Add Post</h1>
+            <div class="field-wrapper">
+                <label for="title" class="field-label">Title</label>
+                <input class="field" id="title" type="text" name="title">
+            </div>
+
+            <div class="field-wrapper">
+                <label for="link" class="field-label">Link</label>
+                <input class="field" id="link" type="text" name="link">
+            </div>
+
+            <div class="field-wrapper">
+                <label for="description" class="field-label">Description</label>
+                <textarea class="field" id="description" name="description"></textarea>
+            </div>
+
+{#            <div class="field-wrapper">#}
+{#                <label for="category" class="field-label">Category</label>#}
+{#                <input class="field" id="category" type="checkbox" name="category" value="Programing Language">#}
+{#            </div>#}
+
+            <button class="form-btn" type="submit">Submit</button>
+        </form>
+    </section>
+{% endblock %}

@@ -1,0 +1,22 @@
+<nav id="navbar">
+    <div id="logo">Resource Share</div>
+    <div id="nav-menu">
+        <ul>
+            <li class="nav-menu-item"><a href="{% url "home" %}">Home</a></li>
+            <li class="nav-menu-item"><a href="{% url "user-list" %}">User</a></li>
+            <li class="nav-menu-item"><a href="{% url 'all-resources' %}">Resource</a></li>
+            <li class="nav-menu-item"><a href="#">Menu4</a></li>
+        </ul>
+    </div>
+
+    <div class="nav-btn">
+        {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}"><span class="material-symbols-outlined logout-btn">mode_off_on</span></a>
+        {% else %}
+            <a href="{% url "sign-up" %}"><button class="auth-btn">Sign Up</button></a>
+            <a href="{% url "sign-in" %}"><button class="auth-btn">Sign In</button></a>
+        {% endif %}
+
+
+    </div>
+</nav>

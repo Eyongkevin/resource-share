@@ -1,0 +1,65 @@
+#post-content {
+    width: 100%;
+    height: calc(100% - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    padding: 40px 25px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+
+}
+
+#form .form-title {
+    width: 100%;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+#form .field-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+#form .field-wrapper .field {
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 3px;
+    color: #ffffff;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+}
+
+#form .field-wrapper .field:focus {
+
+}
+
+#form .form-btn {
+    margin-top: 30px;
+    padding: 8px;
+    border-radius: 4px;
+    color: #ffffff;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+}
+
+#form .form-btn:hover {
+    background-color: rgba(16, 5, 72, 0.15);
+}

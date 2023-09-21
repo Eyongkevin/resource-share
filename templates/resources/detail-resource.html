@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <main>
+        <h1>{{ res.title }}</h1>
+        <p><b>Username: </b>{{ res.user_id.username }}</p>
+        <p><b>Review count: </b>{{ review_count }}</p>
+        {% if average <= 0 %}
+            <p>Rating is not present</p>
+        {% else %}
+            <p><b>Average rating: </b>{{ average }}</p>
+        {% endif %}
+        <p><b>Link: </b><a href="{{ res.link }}">{{ res.link }}</a></p>
+        <p><b>Description: </b> {{ res.description }}</p>
+        <p><b>Posted Date: </b> {{ res.created_at|date }}</p>
+        <p><b>Category: </b>{{ res.cat_id.cat }}</p>
+        <p><b>Tags: </b>{% for tag in tags %}
+            <span>{{ tag.name }} </span>
+        {% endfor %}
+        </p>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static "resources/css/home.css" %}">
+{% endblock %}
+
+{% block content %}
+
+    <header id="res-header">
+        <h1 class="title">{{ title }}</h1>
+    </header>
+
+    <main id="res-main">
+        <section>
+            <div class="res-data">Resources count: {{ res_count }}</div>
+            <div class="res-data">Active Users: {{ active_users_count }}</div>
+        </section>
+
+        <section id="cat">
+            <div class="categories">
+                {% for cat in categories_count %}
+                    <p>{{ cat.cat_id__cat }}: {{ cat.total }}</p>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+{% endblock %}

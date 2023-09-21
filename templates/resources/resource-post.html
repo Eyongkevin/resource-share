@@ -1,0 +1,27 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}
+    Post Resource
+{% endblock %}
+
+
+{% block style %}
+    <link rel="stylesheet" href="{% static "resources/css/form.css" %}">
+{% endblock %}
+
+{% block content %}
+    <section id="post-content">
+        <form id="form" action="{% url "resource-post" %}" method="POST">
+            {% csrf_token %}
+            <h1 class="form-title">Add Resource</h1>
+            {% for field in form %}
+                <div class="field-wrapper">
+                    {{ field.label }}
+                    {{ field }}
+                </div>
+            {% endfor %}
+            <button class="form-btn">Submit</button>
+        </form>
+    </section>
+{% endblock %}

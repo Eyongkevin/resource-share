@@ -1,0 +1,36 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}
+    Resources
+{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'resources/css/resource-page.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div id="all-resources">
+        <section id="page-header">
+            <a href="{% url 'resource-post' %}"><button class="res-add-btn"><span><i class="fa-regular fa-square-plus"></i></span> Add New Post</button></a>
+        </section>
+        <section id="cards">
+            {% for resource in resources %}
+                <div class="card">
+                    <div class="card-title">{{ resource.title }}</div>
+                    <div class="card-description">{{ resource.description }}</div>
+
+                    <div class="cat-section">
+                        <div class="cat">Category:</div>
+                        <div class="cat-name">{{ resource.cat_id }}</div>
+                    </div>
+
+                    <div class="owner-section">
+
+                    </div>
+                </div>
+            {% endfor %}
+
+        </section>
+    </div>
+{% endblock %}

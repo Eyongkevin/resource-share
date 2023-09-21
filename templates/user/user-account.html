@@ -1,0 +1,28 @@
+{% extends 'core/base.html' %}
+
+{% block js %}
+
+{% endblock %}
+
+
+{% block style %}
+
+{% endblock %}
+
+
+{% block title %}
+
+{% endblock %}
+
+
+{% block content %}
+    <div>{{ user.username }}</div>
+
+    <div>Viewed Resources</div>
+    {% for res_id, res_title in request.session.viewed_resources %}
+        <p><a href="{% url 'resources-detail' res_id %}">{{ res_title }}</a></p>
+    {% empty %}
+        <p>No Resources</p>
+    {% endfor %}
+
+{% endblock %}
