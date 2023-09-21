@@ -4,8 +4,11 @@ from django import forms
 from apps.resources.models import Tag
 
 try:
+    print("BEFORE TESTING")
     tags = Tag.objects.all()[0].id
+
 except Exception as err:
+    print("ERROR: ", err)
     pass
 
 
