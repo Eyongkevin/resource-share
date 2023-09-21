@@ -32,7 +32,7 @@ jobs:
       postgres:
         image: postgres
         env:
-          POSTGRES_USER: vitalii
+          POSTGRES_USER: ${{ DB_NAME }}
           POSTGRES_DB: resource_share
           POSTGRES_PASSWORD: root
         ports:
